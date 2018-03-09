@@ -1,7 +1,4 @@
-# DataScienceLib
-my datascience list
-
-## 一般流程
+## 机器学习的一般流程
 
 ### 数据收集
 
