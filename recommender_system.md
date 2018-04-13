@@ -1,3 +1,25 @@
+### 流程
+1. 数据收集
+2. 召回
+Real-time Intention
+根据用户最近浏览下单等行为，基于马尔科夫预测模型推荐或者交叉推荐出可以比较精准的反应出用户最近最新意愿。
+Business Rules
+业务规则是人为设定的规则，根据场景用来限定推荐的内容范围等。
+Context-Based
+基于 Context 的推荐场景和 Context 本身密切相关，例如与季候相关的旅游产品
+LBS
+地理位置距离通过 GeoHash 算法计算，将区域递归划分为规则矩形，并对每个矩形进行编码，筛选 GeoHash 编码相似的 POI，然后进行实际距离计算。
+协同过滤
+aSDAE，SDAE变体，将附加的 side information 集成到输入中，可以改善数据稀疏和冷启动问题。
+Sequential Model
+矩阵分解 马尔科夫链
+3. 排序
+* 在实践中选用以 LR 为主的模型，通过对数据离散化、分布转换等非线性处理后使用 LR。一般的，采用 L1 正则保证模型权重的稀疏性。在优化算法的选择上，使用 OWL-QN 做 batch learning，FTRL 做 online learning。
+* 利用 FM 得到的特征交叉系数来选择喂入 LR 模型的交叉特征组合，避免了繁杂的特征选择工作。对于三阶以上的特征组合可以利用基于 mutual information 等方法处理。
+* 对于 Wide and Deep Learning，将 wide 部分替换 gbdt 组合特征。
+4. 结果生成
+5. 展现
+
 ### 推荐系统经验
 
 1. 隐式反馈比显式反馈重要
