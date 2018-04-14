@@ -102,6 +102,7 @@ categorical feature：无序特征离散化用dummy-encoding将一维信息嵌�
 * LDA
 
 ### 模型选择
+
 #### LR
 ##### 优点
 ##### 缺点
@@ -109,8 +110,11 @@ categorical feature：无序特征离散化用dummy-encoding将一维信息嵌�
 ##### 场景
 
 #### FTRL
+
 #### FTML
+
 #### FFM
+
 #### GBDT
 ##### 优点
 ##### 缺点
@@ -131,9 +135,16 @@ categorical feature：无序特征离散化用dummy-encoding将一维信息嵌�
 #### SGD
 #### Monentum
 #### Adagrad
+#### RMSProp
+#### AdaDelta
 #### Adam
 
 ### 模型调试
+#### BaseLine
+
+* 随机生成结果
+* 简单模型默认参数同时可作特征选择
+* 选择模型使用默认参数对比结构
 
 #### 错误分析
 首先要根据Learning Curve来判断模型处于哪种拟合情况，判断模型结构是否正确。调整时，先进行模型结构调整(feature数量，多项式元素)，让模型处于Just Right的情况，再调整非结构参数(正则化参数)。
@@ -143,6 +154,7 @@ categorical feature：无序特征离散化用dummy-encoding将一维信息嵌�
 * 增加训练集: Fix High Variance
 
 #### 参数调整
+gridsearch/randomsearch/hyperopt
 调整时，先进行模型结构调整(feature数量，多项式元素)，让模型处于Just Right的情况，再调整非结构参数(正则化参数)。
 
 * 减小正则化参数的λ值: Fix High Bias
